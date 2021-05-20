@@ -15,6 +15,7 @@ public class EnvController {
     private final String cfInstanceIndex;
     private final String cfInstanceAddress;
 
+
     public EnvController(
             @Value("${port:NOT SET}") String port,
             @Value("${memory.limit:NOT SET}") String memoryLimit,
@@ -35,7 +36,6 @@ public class EnvController {
         env.put("MEMORY_LIMIT", memoryLimit);
         env.put("CF_INSTANCE_INDEX", cfInstanceIndex);
         env.put("CF_INSTANCE_ADDR", cfInstanceAddress);
-
         return env;
     }
 }

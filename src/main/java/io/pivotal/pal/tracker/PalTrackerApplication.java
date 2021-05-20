@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.sql.Time;
+
 @SpringBootApplication
 public class PalTrackerApplication {
 
@@ -12,4 +14,8 @@ public class PalTrackerApplication {
         SpringApplication.run(PalTrackerApplication.class, args);
     }
 
+    @Bean
+    public TimeEntryRepository timeEntryRepository(){
+        return new InMemoryTimeEntryRepository();
+    }
 }
